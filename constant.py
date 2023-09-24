@@ -1,0 +1,1 @@
+db_tables = ['customers', 'banks', 'items',  'transactions', 'exchange_rates']
