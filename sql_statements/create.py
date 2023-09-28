@@ -13,7 +13,7 @@ banks = '''CREATE TABLE IF NOT EXISTS raw_data.banks
 (
     _id character varying(50) PRIMARY KEY NOT NULL,
     code integer,
-    name character varying(50),
+    name character varying(50)
         
 );'''
 	
@@ -23,7 +23,7 @@ items = ''' CREATE TABLE IF NOT EXISTS raw_data.items
 	name character varying(50),
 	selling_price numeric(7,2),
 	cost_price numeric(7,2)
-) '''
+); '''
 	
 transactions = '''	CREATE TABLE IF NOT EXISTS raw_data.transactions
 (
@@ -35,7 +35,7 @@ transactions = '''	CREATE TABLE IF NOT EXISTS raw_data.transactions
 	qty integer
 ); '''
 	
-exchange_rates = '''	CREATE TABLE IF NOT EXISTS raw_data.exchange_rate
+exchange_rates = '''	CREATE TABLE IF NOT EXISTS raw_data.exchange_rates
 (
 	id integer PRIMARY KEY NOT NULL,
 	customer_id integer ,
@@ -50,7 +50,7 @@ exchange_rates = '''	CREATE TABLE IF NOT EXISTS raw_data.exchange_rate
 dim_customers = '''
 CREATE TABLE IF NOT EXISTS staging.dim_customers
 (
-    id BIGINT IDENTITY(1, 1)
+    id BIGINT IDENTITY(1, 1),
 	customer_id integer NOT NULL,
 	customer_name character varying ,
 	email character varying,
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS staging.dim_dates
 	
 ft_customer_transactions = '''
 CREATE TABLE IF NOT EXISTS staging.ft_customer_transactions(
-    id BIGINT IDENTITY(1, 1)
+    id BIGINT IDENTITY(1, 1),
 	transaction_id bigint NOT NULL ,	
 	item_id bigint,
 	customer_id int,

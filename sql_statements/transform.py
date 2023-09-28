@@ -45,7 +45,6 @@ EXTRACT(HOUR FROM registered_at) hour_
 FROM customers;
 
 '''
-
 ft_customer_transactions = '''
 
 INSERT INTO staging.ft_customer_transactions(
@@ -69,4 +68,5 @@ JOIN raw_data.customers c ON t.customer_id = c.id
 
 '''
 
-transformation_queries = [dim_customers, dim_items, dim_banks,dim_dates,ft_customer_transactions ]
+
+transformation_queries = [dim_customers, dim_items, dim_banks,dim_dates, ft_customer_transactions]
